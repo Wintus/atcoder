@@ -13,8 +13,7 @@ def dfs(i, last3, n, memo)
   a =
     CHARS
     .reject { |c| last3 + c =~ BAD }
-    .map { |c| dfs(i + 1, last3[1..-1] + c, n, memo) }
-    .reduce(:+)
+    .sum { |c| dfs(i + 1, last3[1..-1] + c, n, memo) }
 
   memo[i][last3] = a % MOD
 end
