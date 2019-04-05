@@ -1,11 +1,19 @@
-re = /dream$|dreamer$|erase$|eraser$/
+suffixes = %w[dream dreamer erase eraser]
+suffixes.each(&:reverse!)
 
 s = gets.strip
+s.reverse!
 
-b =
-  until s.empty?
-    unless s.gsub!(re, '')
+# greedy
+i = 0
+no =
+  while i < s.size
+    suffix = suffixes.find { |d| s[i, d.size] == d }
+    if suffix
+      i += suffix.size
+    else
       break 'NO'
     end
   end
-puts b || 'YES'
+
+puts no || 'YES'
