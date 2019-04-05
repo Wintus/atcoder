@@ -3,4 +3,6 @@ ns = gets.split.map(&:to_i)
 
 ns.sort!.reverse!
 
-p ns.each_slice(2).map { |a, b| a - b.to_i }.reduce(:+)
+sig = [1, -1].cycle
+
+p ns.zip(sig).map { |n, s| n * s }.reduce(:+)
