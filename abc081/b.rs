@@ -56,6 +56,7 @@ fn main() {
         n: u8, // < 200
         a: [u32; n], // < 10^9
     }
-    let m = a.iter().map(|n| n.trailing_zeros()).min().unwrap();
-    println!("{}", m);
+    if let Some(m) = a.iter().map(|n| n.trailing_zeros()).min() {
+        println!("{}", m);
+    }
 }
