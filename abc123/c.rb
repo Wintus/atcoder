@@ -9,4 +9,5 @@ e = gets.to_i
 caps = [a, b, c, d, e]
 cap = caps.min # bottle neck
 
-p 5 + n / cap
+groups = (n + cap - 1) / cap
+p groups + 4
