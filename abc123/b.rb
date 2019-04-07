@@ -1,5 +1,5 @@
 def round10(n)
-  (n / 10.0).ceil * 10
+  (n + 9) / 10 * 10
 end
 
 def time(ms)
@@ -9,13 +9,7 @@ def time(ms)
 end
 
 # 1..123
-a = gets.to_i
-b = gets.to_i
-c = gets.to_i
-d = gets.to_i
-e = gets.to_i
-
-ms = [a, b, c, d, e]
+ms = Array.new(5) { gets.to_i } # a..e
 ps = ms.permutation
 
 # 41..643
