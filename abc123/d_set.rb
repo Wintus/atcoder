@@ -1,4 +1,5 @@
 # O(K log K) solution
+# use -score for O(1) pop
 
 require 'set'
 
@@ -15,25 +16,25 @@ cs.sort!.reverse!
 comb = Set.new
 ans = []
 
-# init
-comb << [0, 0, 0]
-
 score = ->(a, b, c) { as[a] + bs[b] + cs[c] }
 
-k.times do
-  t = comb.max_by(&score)
-  comb.delete(t)
-  ans << t
+init = [0, 0, 0]
+comb << [score[*init], *init]
 
-  a, b, c = t
+k.times do
+  t = comb.max_by(&:first)
+  comb.delete(t)
+  s, a, b, c = t
+  ans << s
+
   opts = [
     [a + 1, b, c],
     [a, b + 1, c],
     [a, b, c + 1],
   ]
-  opts.select! { |a, b, c| as[a] && bs[b] && cs[c] }
+  opts.select! { |abc| score[*abc] rescue false }
+  opts.map! { |abc| [score[*abc], *abc] }
   comb.merge(opts)
 end
 
-ans.map!(&score)
 p(*ans)
