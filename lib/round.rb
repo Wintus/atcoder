@@ -1,5 +1,7 @@
+# round = group_count * scale
 # @param [Integer] int
 # @param [Integer] scale
-def round(int, scale)
+# @return [Integer]
+def round(int, scale = 10)
   (int + scale - 1) / scale * scale
 end
