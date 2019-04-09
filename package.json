@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@prettier/plugin-ruby": "^0.10.0",
+    "prettier": "^1.16.4",
     "ts-node": "^8.0",
     "typescript": "2.1.6"
   }
