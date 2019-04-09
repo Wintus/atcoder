@@ -10,3 +10,27 @@ x-lang: &lang
 
 
 services:
+
+  ruby:
+    <<: *lang
+    image: ruby:2.3.3
+
+  python:
+    <<: *lang
+    image: python:3.4.3
+
+  rust:
+    <<: *lang
+    image: rust:1
+
+  haskell:
+    <<: *lang
+    image: haskell:7.10.3
+
+  js:
+    <<: *lang
+    image: node:5.12.0
+
+  clj:
+    <<: *lang
+    image: clojure:openjdk-8-tools-deps
