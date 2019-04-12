@@ -1,4 +1,7 @@
 k, s = gets.split.map(&:to_i)
 
-ns = [*0..k]
-p ns.product(ns, ns).count { |x, y, z| x + y + z == s }
+ks = 0..k
+ns = [*ks]
+xy = ns.product(ns) # 3 -> 2
+zs = xy.map { |x, y| s - x - y }
+p zs.count { |z| ks.include?(z) }
