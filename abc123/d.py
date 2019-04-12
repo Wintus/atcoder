@@ -17,9 +17,8 @@ def score(ia, ib, ic):
 
 ans = []
 
-init = (0, 0, 0)
 comb = set()
-comb.add((score(*init), *init))
+comb.add((score(0, 0, 0), 0, 0, 0))
 
 for _ in range(K):
     t = max(comb)
@@ -32,9 +31,9 @@ for _ in range(K):
         (i, j + 1, k),
         (i, j, k + 1),
     ]
-    for opt in opts:
+    for (i, j, k) in opts:
         try:
-            comb.add((score(*opt), *opt))
+            comb.add((score(i, j, k), i, j, k))
         except IndexError:
             pass
 
