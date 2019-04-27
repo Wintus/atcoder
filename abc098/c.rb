@@ -1,16 +1,13 @@
-class Array
-  def scan_left(init = 0)
-    reduce([init]) { |a, n| a << yield(a.last, n) }
+module Enumerable
+  def cum_sum
+    inject([0]) { |a, n| a << (a.last + n) }
   end
 end
 
 n = gets.to_i
 s = gets.chomp.chars
 
-ws = s.map { |c| c.count 'W' }.scan_left(&:+)
-es = s.map { |c| c.count 'E' }.scan_left(&:+)
+ws = s.map { |c| c.count 'W' }.cum_sum
+es = s.map { |c| c.count 'E' }.cum_sum
 
-# reversed
-es1 = Array.new(n) { |i| es.last - es[i] }
-
-p Array.new(n) { |i| ws[i] + es1[i] }.min
+p Array.new(n) { |i| ws[i] + es.last - es[i] }.min
