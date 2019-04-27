@@ -11,5 +11,4 @@ ns2 = gets.split.map(&:to_i)
 a1 = ns1.scan(&:+)
 a2 = ns2.scan(&:+)
 
-b2 = Array.new(n) { |i| a2.last - a2[i] }
-p a1.drop(1).zip(b2).map { |(a, b)| a + b }.max
+p Array.new(n) { |i| a1[i + 1] + a2.last - a2[i] }.max
