@@ -1,11 +1,19 @@
+module Enumerable
+  def scan_left(init = 0)
+    inject([init]) { |a, n| a << yield(a.last, n) }
+  end
+end
+
 n = gets.to_i
 ns = gets.split.map(&:to_i)
 
-if ns.count(1) > 1
-  p 1
-else
-  ds = Array.new(n) do |i|
-    ns.reject.with_index { |_, j| i == j }.reduce(&:gcd)
-  end
-  p ds.max
+ls = ns.scan_left(&:gcd)
+rs = ns.reverse.scan_left(&:gcd).reverse
+# p ls, rs
+
+as = Array.new(n) do |i|
+  l = ls[i]
+  r = rs[i + 1]
+  l.gcd r
 end
+p as.max
