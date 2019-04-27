@@ -1,5 +1,5 @@
 module Enumerable
-  def scan_left(init = 0)
+  def scan(init = 0)
     inject([init]) { |a, n| a << yield(a.last, n) }
   end
 end
@@ -7,8 +7,8 @@ end
 n = gets.to_i
 ns = gets.split.map(&:to_i)
 
-ls = ns.scan_left(&:gcd)
-rs = ns.reverse.scan_left(&:gcd).reverse
+ls = ns.scan(&:gcd)
+rs = ns.reverse.scan(&:gcd).reverse
 # p ls, rs
 
 as = Array.new(n) do |i|
