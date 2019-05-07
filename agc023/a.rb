@@ -8,4 +8,4 @@ ns.inject([0]) { |a, n| a << a.last + n }.each do |n|
 end
 
 # sum of nC2
-p counts.values.map { |n| n * (n - 1) / 2 }.reduce(:+)
+p counts.each_value.reduce(0) { |a, n| a + n * (n - 1) / 2 }
