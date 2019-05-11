@@ -1,4 +1,4 @@
-_ = gets # .to_i
+gets
 ns = gets.split.map(&:to_i)
 
 # min LSB
