@@ -1,15 +1,16 @@
-INF = 1 << 60
-
 n, k = gets.split.map(&:to_i)
 hs = gets.split.map(&:to_i)
 
 dp = [0]
-# refer ahead
-n.times do |i|
-  (i + 1).upto([i + k, n - 1].min) do |j|
-    # inline change min
-    cost = dp[i] + (hs[i] - hs[j]).abs
-    dp[j] = cost if dp.fetch(j, INF) > cost
+# refer back
+1.upto(n - 1) do |i|
+  last = i - 1
+  dp[i] = dp[last] + (hs[i] - hs[last]).abs # 仮
+
+  [i - k, 0].max.upto(last - 1) do |j|
+    # change min
+    cost = dp[j] + (hs[i] - hs[j]).abs
+    dp[i] = cost if dp[i] > cost
   end
 end
 
