@@ -6,10 +6,8 @@ hs = gets.split.map(&:to_i)
 dp = [0]
 # refer ahead
 n.times do |i|
-  k.times do |l|
-    j = i + l + 1
-    next unless j < n
-
+  # i + 1..k & 1...n
+  (i + 1).upto([i + k, n - 1].min) do |j|
     # change min
     cost = dp[i] + (hs[i] - hs[j]).abs
     dp[j] = cost if (dp[j] || INF) > cost
