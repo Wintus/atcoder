@@ -1,14 +1,16 @@
-s = gets
+require 'scanf'
 
-ms = 1..12
-a = s[0, 2].to_i
-b = s[2, 2].to_i
+s = gets.rstrip
 
-if ms.include?(a) && ms.include?(b)
+a, b = s.scanf "%2d%2d"
+months = 1..12
+
+case [months.include?(a), months.include?(b)]
+when [true, true]
   puts 'AMBIGUOUS'
-elsif !ms.include?(a) && ms.include?(b)
+when [false, true]
   puts 'YYMM'
-elsif ms.include?(a) && !ms.include?(b)
+when [true, false]
   puts 'MMYY'
 else
   puts 'NA'
