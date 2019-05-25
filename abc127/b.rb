@@ -1,5 +1,5 @@
 r, d, x = gets.split.map(&:to_i)
 
-1.upto(10) do
+10.times do
   p x = r * x - d
 end
