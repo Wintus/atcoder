@@ -1,4 +1,4 @@
-_n, m = gets.split.map(&:to_i)
+n, m = gets.split.map(&:to_i)
 cards = gets.split.map(&:to_i)
 ops = Array.new(m) { gets.split.map(&:to_i) }
 
@@ -8,17 +8,10 @@ cards.sort!
 ops.sort_by! { |(_c, val)| val }
 ops.reverse!
 
-ops.each do |count, val|
-  i = cards.bsearch_index { |card| card <= val }
-  next unless i
+# overwrites
+ds = ops.flat_map { |count, val| [val] * count }.first(n)
 
-  n = cards[i..-1].take_while { |card| card < val }.size
-  # p [i, n, count]
-  l = [i, i + n - count].max
-  r = i + n
-  range = l...r
-  # p [range, cards[range]]
-  cards[range] = [val] * range.size
-end
+# replace count
+l = cards.zip(ds).take_while { |(c, d)| c && d && c <= d }.size
 
-p cards.reduce(:+)
+p [*ds.first(l), *cards.drop(l)].reduce(:+)
