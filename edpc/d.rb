@@ -1,20 +1,16 @@
 # knapsack
 
-N, W = gets.split.map(&:to_i)
-items = Array.new(N) { gets.split.map(&:to_i) }
+n, w = gets.split.map(&:to_i)
 
-dp = Array.new(N + 1) { Array.new(W + 1, 0) }
-N.times do |i|
-  w, v = items[i]
-  0.upto(W) do |w_sum|
-    dw = w_sum - w
-    if dw >= 0 # choose
-      # change max
-      dp[i + 1][w_sum] = [dp[i + 1][w_sum], dp[i][dw] + v].max
-    end
-    # change max
-    dp[i + 1][w_sum] = [dp[i + 1][w_sum], dp[i][w_sum]].max
+p dp = [0] * (w + 1)
+n.times do
+  iw, iv = gets.split.map(&:to_i)
+  (w - iw).downto(0) do |w_sum|
+    v0, v1 = dp[w_sum + iw], dp[w_sum] + iv
+    dp[w_sum + iw] = v1 if v1 > v0
+    p w_sum => dp
   end
+  p dp
 end
 
-p dp.dig(N, W)
+p dp[-1]
