@@ -1,6 +1,10 @@
-_n, m = gets.split.map(&:to_i)
-# [](l,r)
-cards = Array.new(m) { gets.split.map(&:to_i) }
+n, m = gets.split.map(&:to_i)
 
-ls, rs = cards.transpose
-p((ls.max..rs.min).size)
+l, r = 1, n
+m.times do
+  li, ri = gets.split.map(&:to_i)
+  l = [l, li].max
+  r = [r, ri].min
+end
+
+p((l..r).size)
