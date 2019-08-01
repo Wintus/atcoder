@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@types/node": "^12",
+    "atcoder-cli": "^2.0.3",
     "ts-node": "^8.0",
     "typescript": "2.1.6"
   }
