@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@types/node": "^6",
+    "@types/node": "^12",
     "ts-node": "^8.0",
     "typescript": "2.1.6"
   }
