@@ -1,0 +1,6 @@
+w, h, x, y = gets.split.map(&:to_i)
+
+area = w * h / 2.0
+multi = x * 2 == w && y * 2 == h
+
+puts "%f %d" % [area, multi ? 1 : 0]
