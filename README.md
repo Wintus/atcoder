@@ -2,6 +2,41 @@
 
 https://atcoder.jp/
 
+## Prepare for contests
+
+Initialize:
+
+```bash
+acc login
+acc session
+
+pipenv shell
+oj login https://atcoder.jp/
+
+cp -r .acc/templates/* $(acc config-dir)
+acc config default-task-choice all
+acc config default-template ruby
+acc config
+```
+
+Setup for every contests:
+
+```bash
+pipenv shell
+
+acc new abcXXX
+cd abcXXX
+cd a/
+edit main.xxx
+oj test -d tests/ -c 'xxx main.xxx'
+acc s main.xxx
+```
+
+### ref
+
+- https://github.com/Tatamo/atcoder-cli
+- https://github.com/kmyk/online-judge-tools
+
 ## Practices
 
 https://atcoder.jp/contests/practice/custom_test
