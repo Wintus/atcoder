@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Enumerable
   def scan(init)
     inject([init]) { |a, n| a << yield(a.last, n) }

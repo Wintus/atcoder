@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 _, _, _, k = gets.split.map(&:to_i)
 a = gets.split.map(&:to_i)
 b = gets.split.map(&:to_i)

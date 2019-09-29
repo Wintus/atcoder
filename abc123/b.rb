@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def round10(n)
   (n + 9) / 10 * 10
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 gets # n
 hs = gets.split.map(&:to_i)
 

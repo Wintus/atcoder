@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 r = /[ATCG]+/
 s = gets.strip
 

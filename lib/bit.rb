@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def msb(x)
   x.bit_length - 1
 end
