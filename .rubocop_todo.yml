@@ -10,11 +10,6 @@
 Lint/AmbiguousOperator:
   Exclude:
 
-# Offense count: 3
-Lint/DuplicateMethods:
-  Exclude:
-    - 'lib/grid.rb'
-
 # Offense count: 1
 Lint/UselessAssignment:
   Exclude:

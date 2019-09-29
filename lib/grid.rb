@@ -11,8 +11,6 @@ dx = [1, 1, 0, -1, -1, -1, 0, 1]
 dy = [0, 1, 1, 1, 0, -1, -1, -1]
 DYX = dy.zip(dx)
 
-attr_accessor :h, :w, :grid, :hr, :wr
-
 @h, @w = gets.split.map(&:to_i)
 
 def grid
