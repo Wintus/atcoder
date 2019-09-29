@@ -3,8 +3,8 @@
 def digit_sum(n)
   sum = 0
   until n.zero?
-    n, q = n.divmod(10)
-    sum += q
+    n, m = n.divmod(10)
+    sum += m
   end
   sum
 end
