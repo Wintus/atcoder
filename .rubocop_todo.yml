@@ -15,11 +15,6 @@ Lint/DuplicateMethods:
   Exclude:
     - 'lib/grid.rb'
 
-# Offense count: 4
-Lint/ShadowingOuterLocalVariable:
-  Exclude:
-    - 'abc123/d.rb'
-
 # Offense count: 1
 Lint/UselessAssignment:
   Exclude:

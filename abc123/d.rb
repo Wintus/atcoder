@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 _, _, _, k = gets.split.map(&:to_i)
-a = gets.split.map(&:to_i)
-b = gets.split.map(&:to_i)
-c = gets.split.map(&:to_i)
+as = gets.split.map(&:to_i)
+bs = gets.split.map(&:to_i)
+cs = gets.split.map(&:to_i)
 
-ab = a.product(b).map { |a, b| a + b }
-ab.sort!.reverse!
+abs = as.product(bs).map { |(a, b)| a + b }
+abs.sort!.reverse!
 
-abc = ab.take(k).product(c).map { |ab, c| ab + c }
+abc = abs.take(k).product(cs).map { |(ab, c)| ab + c }
 abc.sort!.reverse!
 
 p(*abc.take(k))
