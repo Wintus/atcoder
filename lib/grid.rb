@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 4 neighbors
 dx = [1, 0, -1, 0]
 dy = [0, 1, 0, -1]
@@ -8,8 +10,6 @@ _dy = [*dy, 1, 1, -1, -1]
 dx = [1, 1, 0, -1, -1, -1, 0, 1]
 dy = [0, 1, 1, 1, 0, -1, -1, -1]
 DYX = dy.zip(dx)
-
-attr_accessor :h, :w, :grid, :hr, :wr
 
 @h, @w = gets.split.map(&:to_i)
 

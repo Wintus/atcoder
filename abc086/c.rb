@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # (t, x, y)
 INIT = [0] * 3
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # < 2^50
 n = gets.to_i
 

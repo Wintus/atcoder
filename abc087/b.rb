@@ -1,4 +1,6 @@
-COINS = [500, 100, 50]
+# frozen_string_literal: true
+
+COINS = [500, 100, 50].freeze
 
 a, b, c, x = readlines.map(&:to_i)
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # round = group_count * scale
 # @param [Integer] int
 # @param [Integer] scale

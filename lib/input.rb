@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # number
 n = gets.to_i
 

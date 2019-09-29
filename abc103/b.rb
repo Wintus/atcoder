@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def shift_l(str)
   str[1..-1] + str[0]
 end
