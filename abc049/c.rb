@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 suffixes = %w[dream dreamer erase eraser]
 
 s = gets.strip

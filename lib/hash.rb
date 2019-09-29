@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 COLLECTOR = Hash.new { |h, k| h[k] = [] }
 COUNTER = Hash.new { |h, k| h[k] = 0 }
 GRAPH = Hash.new { |h, k| h[k] = {} }

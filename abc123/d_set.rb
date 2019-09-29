@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # O(K log K) solution
 # use -score for O(1) pop
 
@@ -30,9 +32,15 @@ k.times do
   opts = [
     [a + 1, b, c],
     [a, b + 1, c],
-    [a, b, c + 1],
+    [a, b, c + 1]
   ]
-  opts.select! { |abc| score[*abc] rescue false }
+  opts.select! do |abc|
+    begin
+                         score[*abc]
+    rescue StandardError
+      false
+                       end
+  end
   opts.map! { |abc| [score[*abc], *abc] }
   comb.merge(opts)
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 BAD = /AGC|GAC|ACG|A.GC|AG.C/.freeze
 MOD = 10**9 + 7
 CHARS = 'ACGT'.each_char

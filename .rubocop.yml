@@ -1,0 +1,13 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+
+Style/AsciiComments:
+  Enabled: false
+
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100

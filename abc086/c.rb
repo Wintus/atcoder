@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 n = gets.to_i
 # (t, x, y)[]
 plans = Array.new(n + 1)

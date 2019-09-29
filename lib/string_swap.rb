@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class String
   def swap!(i, j = i + 1)
     tap do |s|

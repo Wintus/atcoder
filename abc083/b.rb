@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def digit_sum(n)
   sum = 0
   until n.zero?
