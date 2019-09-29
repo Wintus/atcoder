@@ -55,9 +55,3 @@ Style/GuardClause:
   Exclude:
     - 'abc049/c.rb'
     - 'abs/abc049_c.rb'
-
-# Offense count: 1
-# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Metrics/LineLength:
-  Max: 87
