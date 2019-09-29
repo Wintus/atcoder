@@ -25,12 +25,6 @@ Lint/UselessAssignment:
   Exclude:
     - 'lib/input.rb'
 
-# Offense count: 30
-# Configuration parameters: MinNameLength, AllowNamesEndingInNumbers, AllowedNames, ForbiddenNames.
-# AllowedNames: io, id, to, by, on, in, at, ip, db
-Naming/UncommunicativeMethodParamName:
-  Exclude:
-
 # Offense count: 1
 Security/Eval:
   Exclude:
