@@ -26,13 +26,6 @@ Security/Eval:
     - 'abc079/c.rb'
 
 # Offense count: 5
-# Configuration parameters: AllowedChars.
-Style/AsciiComments:
-  Exclude:
-    - 'abc124/d.rb'
-    - 'abs/practice.rb'
-
-# Offense count: 5
 Style/Documentation:
   Exclude:
     - 'spec/**/*'
