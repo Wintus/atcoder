@@ -43,7 +43,8 @@
       "url": "https://atcoder.jp/contests/abc130/tasks/abc130_d",
       "directory": {
         "path": "d",
-        "testdir": "tests"
+        "testdir": "tests",
+        "submit": "main.rb"
       }
     },
     {
