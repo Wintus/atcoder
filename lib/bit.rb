@@ -10,7 +10,7 @@ end
 
 def bit_count(n)
   c = 0
-  while n > 0
+  while n.positive?
     c += n & 1
     n = n >> 1
   end

@@ -7,7 +7,7 @@ t =
     (0..n).each do |a|
       (0..(n - a)).each do |b|
         c = n - a - b
-        next if c < 0
+        next if c.negative?
 
         total = 10_000 * a + 5000 * b + 1000 * c
         throw(true, [a, b, c]) if total == y
